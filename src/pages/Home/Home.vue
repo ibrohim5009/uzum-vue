@@ -4,7 +4,7 @@ import Carousel from '../../components/Carousel/Carousel.vue';
 import Card from './../../components/Card/Card.vue';
 import NavbarTop from './../../components/NavbarTop/NavbarTop.vue';
 import Navbar from './../../components/Navbar/Navbar.vue';
-import NavbarBottom from './../../components/NavbarBottom/navbarbottom.vue';
+import NavbarBottom from './../../components/NavbarBottom/Navbarbottom.vue';
 
 export default {
   components: {
