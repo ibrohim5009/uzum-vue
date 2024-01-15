@@ -1,10 +1,9 @@
 <script>
 import Carousel from '../../components/Carousel/Carousel.vue';
-
+import NavbarBottom from "../../components/NavbarBottom/NavbarBottom.vue"
 import Card from './../../components/Card/Card.vue';
 import NavbarTop from './../../components/NavbarTop/NavbarTop.vue';
 import Navbar from './../../components/Navbar/Navbar.vue';
-import NavbarBottom from './../../components/NavbarBottom/navbarbottom.vue';
 
 export default {
   components: {
@@ -32,5 +31,3 @@ export default {
   <!-- Basket -->
 </template>
 
-
-../../components/Carousel/carousel.vue../../components/Card/Card.vue../../components/NavbarTop/NavbarTop.vue../../components/Navbar/Navbar.vue../../components/NavbarBottom/navbarbottom.vue
