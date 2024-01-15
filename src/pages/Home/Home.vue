@@ -1,5 +1,5 @@
 <script>
-import Carousel from '../../components/Carousel/carousel.vue';
+import Carousel from '../../components/Carousel/Carousel.vue';
 
 import Card from './../../components/Card/Card.vue';
 import NavbarTop from './../../components/NavbarTop/NavbarTop.vue';
