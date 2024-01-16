@@ -5,14 +5,14 @@ export default {
     name: "Navbar",
     components: {
         Button
-    },
+    }
 }
 </script>
 
 <template>
     <div>
-        <div class="container mx-auto mt-4 flex items-center justify-center">
-            <div class="w-[1270px] flex justify-between">
+        <div class="container mx-auto mt-4 flex items-center justify-center isdesktop">
+            <div class="md:w-[1065px] 2xl:w-[1270px] flex justify-between">
                 <div class="flex items-center text-center">
                     <svg data-v-aa1700bc="" width="250" height="32" viewBox="0 0 215 32" fill="none"
                         xmlns="http://www.w3.org/2000/svg" alt="Uzum" class="ui-icon  logo">
@@ -77,31 +77,101 @@ export default {
                     </svg>
                 </div>
                 <Button @click="scrollToMiddle" />
-                <div class="flex items-center justify-center rounded-[4px] border bordr-[#D7D7D9] w-[506px] h-[40px]">
+                <div
+                    class="flex items-center md:justify-between md:ml-3 2xl:justify-center xl:justify-center rounded-[4px] border bordr-[#D7D7D9] md:w-[1050px] 2xl:w-[506px] h-[40px]">
                     <input v-model="state" type="text"
-                        class="outline-none border-none ml-2 w-full pl-2 placeholder:text-sm placeholder:text-[#757575]"
+                        class="md:w-[] outline-none border-none ml-2 xl:w-full 2xl:w-full pl-2 placeholder:text-sm placeholder:text-[#757575]"
                         placeholder="Mahsulotlar va turkumlar izlash">
                     <div class="w-[76px] flex h-[37px] bg-[#f2f4f7] justify-center text-center">
                         <v-icon name="oi-search" class="mt-2 text-[#595B66]" />
                     </div>
                 </div>
-                <div class="flex gap-4 items-center justify-evenly w-[330px]">
-                    <div class="w-[10px] justify-center flex gap-2 items-center ml-3">
+                <div class="flex gap-4 items-center md:justify-center md:gap-10 2xl:justify-evenly w-[330px]">
+                    <div class="md:w-[0px] 2xl:w-[10px] justify-center flex gap-2 items-center ml-3">
                         <v-icon name="hi-user" scale="1.2" />
-                        <p class="text-[#1f2026] md:mr-12">Kirish</p>
+                        <p class="text-[#1f2026] nima md:mr-12">Kirish</p>
                     </div>
-                    <div class="w-[10px] justify-center flex gap-2 items-center">
+                    <div class="md:w-[0px] 2xl:w-[10px] justify-center flex gap-2 items-center">
                         <v-icon name="bi-heart" scale="1.2" />
-                        <p class="text-[#1f2026]">Saralangan</p>
+                        <p class="text-[#1f2026] nima">Saralangan</p>
                     </div>
-                    <router-link to="/basket" class="w-[10px] justify-center flex gap-2 items-center ml-5">
+                    <router-link to="/basket" class="md:w-[0px] 2xl:w-[10px] justify-center flex gap-2 items-center">
                         <v-icon name="bi-bag" scale="1.2" />
-                        <p class="text-[#1f2026]">Savat</p>
+                        <p class="text-[#1f2026] nima">Savat</p>
                     </router-link>
                 </div>
+            </div>
+        </div>
+        <div class="container mx-auto mt-4 flex items-center justify-center ismobile">
+            <div class="">
+                <div class="flex items-center md:justify-between md:ml-3 2xl:justify-center xl:justify-center rounded-[4px] bg-[#edeff2] h-[32px] inmobileopen">
+                    <div class="w-[36px] flex h-[37px] justify-center items-center">
+                        <v-icon name="oi-search" scale="1.1"/>
+                    </div>
+                    <input v-model="state" type="text"
+                        class="outline-none bg-[#edeff2] border-none ml-1 w-full placeholder:text-sm placeholder:text-[#757575] placeholder:text-start"
+                        placeholder="Mahsulotlar va turkumlar izlash">
+                </div>
+            </div>
+        </div>
+        <div
+            class="fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600 ismobile">
+            <div class="grid h-full max-w-lg grid-cols-4 mx-auto font-medium">
+                <button type="button"
+                    class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
+                    awevae
+                </button>
+                <button type="button"
+                    class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
+                    awejkv
+                </button>
+                <button type="button"
+                    class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
+                    iaej
+                </button>
+                <button type="button"
+                    class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
+                </button>
             </div>
         </div>
     </div>
 </template>
 
-<style scoped>/* Add your styles here if needed */</style>../Button/Button.vue
+<style scoped>
+@media (max-width: 1120px) {
+    .nima {
+        display: none;
+    }
+
+    .nima> :nth-child(3) {
+        display: flex;
+    }
+}
+
+@media (max-width: 1113px) {
+    .isdesktop {
+        display: none;
+    }
+
+    .ismobile {
+        display: block;
+    }
+}
+
+@media (min-width: 1113px) {
+    .isdesktop {
+        display: block;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ismobile {
+        display: none;
+    }
+}
+</style>
